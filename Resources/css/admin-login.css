@@ -1,0 +1,146 @@
+/*Author : Banuka Dananjaya;
+Theme : Food Order Website Admin;
+Version : 1.0; */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+	--main-font:thin 100;
+	--main-size:15px;
+	--main-color:#a4b0be;
+	--hover-color:#f1f2f6;
+	--white:#fff;
+	--black:#222;
+	--light-white:#dfe4ea;
+	--light-black:rgb(97, 95, 95);
+	--border:.1rem solid var(--black);
+	--box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+	--text-shadow:0 1.5rem 3rem rgba(0,0,0,.1);
+} 
+
+.align-center{
+    text-align: center;
+}
+
+.img-responsive{
+    width: 100%;
+}
+.heading{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1%;
+}
+.success{
+	font-weight: bold;
+	color:  #2ed573;
+}
+.error{
+	font-weight: bold;
+	color:  #ff4757;
+}
+
+body{
+    background-color: var(--white);
+}
+.wrapper{
+    background-color: white;
+    box-shadow: 20px 20px 20px 0 rgb(0, 0, 0, .3);
+    width: 40%;
+    margin: 5% auto;
+    /* background-color: var(--main-color); */
+    border-radius: 20px;
+    /* border: 1px solid red; */
+    overflow: hidden;
+}
+.header{
+    background-image:  linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.9)),url(../css/img/header_img.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    /* min-height: 170px; */
+}
+.topbar{
+    display: flex;
+    width: 100%;
+    /* border: 1px solid red; */
+    /* justify-content: space-around;
+    align-items: center; */
+}
+.topbar-logo{
+    flex: 1;
+    max-width:100px;
+    /* border: 1px solid red; */
+}
+.topbar-title{
+    flex: 5;
+    /* justify-items: flex-end; */
+    align-self: center;
+    /* border: 1px solid red; */
+}
+
+.topbar-title h1{
+    color: whitesmoke;
+    font-size: 2rem;
+    padding-bottom: 2%;
+    font-weight: bold;
+}
+
+
+
+
+.login{
+    /* margin: 2% 10%;*/
+    padding: 5% 10%; 
+    
+    border-radius: 10px;
+    
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    padding: 15px ;
+    margin: 5px 0 22px 0;
+    /* display: inline-block; */
+    border: none;
+    background-color: whitesmoke;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+.btn{
+    background-color: #a4b0be;
+    color: white;
+    padding: 20px;
+    border:none;
+    cursor:pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 20%;
+     margin-top: 1.5rem;
+    /* opacity: 0.8; */
+    border:none;
+    
+}
+.btn:hover{
+    background-color: #747d8c;
+}
+form label{
+    font-weight: bold;
+}
+.creater-line{
+    margin-top:40px ;
+    color: #a4b0be;
+}
+.creater-line a{
+    color: #747d8c;
+}

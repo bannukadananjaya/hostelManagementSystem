@@ -1,0 +1,219 @@
+/*Author : Banuka Dananjaya;
+Theme : Food Order Website Admin;
+Version : 1.0; */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+	--main-font:thin 100;
+	--main-size:15px;
+	--main-color:#a4b0be;
+	--hover-color:#f1f2f6;
+	--white:#fff;
+	--black:#222;
+	--light-white:#dfe4ea;
+	--light-black:rgb(97, 95, 95);
+	--border:.1rem solid var(--black);
+	--box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+	--text-shadow:0 1.5rem 3rem rgba(0,0,0,.1);
+} 
+
+.align-center{
+    text-align: center;
+}
+
+.img-responsive{
+    width: 100%;
+}
+.btn-primary{
+	background-color: var(--main-color);
+	padding: 1%;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1rem;
+}
+.btn-primary:hover{
+	color: white;
+	background-color: var(--light-black);
+}
+.btn-secondary{
+	background-color: #55efc4;
+	color: var(--light-black);
+	padding: 1%;
+	text-decoration: none;
+	text-transform: uppercase;
+	/* font-weight: bold; */
+	font-size: 0.9rem;
+}
+.btn-secondary:hover{
+	color: white;
+	background-color: #00b894;
+}
+
+.btn-thirdinary{
+	background-color: #ff7f50;
+	color: var(--light-black);
+	padding: 1%;
+	text-decoration: none;
+	text-transform: uppercase;
+	/* font-weight: bold; */
+	font-size: 0.9rem;
+}
+.btn-thirdinary:hover{
+	color: white;
+	background-color: #ff6348;
+}
+.btn-quantiary{
+	background-color: #ff6b81;
+	color: var(--light-black);
+	padding: 1%;
+	text-decoration: none;
+	text-transform: uppercase;
+	/* font-weight: bold; */
+	font-size: 0.9rem;
+}
+.btn-quantiary:hover{
+	color: white;
+	background-color: #ff4757;
+}
+.success{
+	font-weight: bold;
+	color:  #2ed573;
+}
+.error{
+	font-weight: bold;
+	color:  #ff4757;
+}
+
+/* start */
+
+.container{
+	width: 80%;
+	margin:auto;
+}
+
+header{
+    background-image:  linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.9)),url(../css/img/header_img.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    /* min-height: 170px; */
+}
+.topbar{
+    display: flex;
+    justify-content: space-around;
+}
+.topbar-logo{
+    flex: 1;
+    max-width:100px;
+}
+.topbar-title{
+    flex: 5;
+    /* justify-self: center; */
+    align-self: center;
+}
+.logout{
+	/* border: 1px solid white; */
+	flex: 1;
+	align-self: center;
+	max-width: 50px;
+}
+.topbar-title h1{
+    color: whitesmoke;
+    font-size: 2.5rem;
+    padding-bottom: 2%;
+    font-weight: bold;
+}
+
+
+/* Design navigation pannel */
+
+
+.navigation ul{
+    display: flex;
+	justify-content: space-around;
+	list-style: none;
+	margin: 2% 5%;
+    /* flex-direction: column; */
+    /* line-height: 90px; */
+ } 
+
+.navigation ul li a{
+	display: inline-block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8% 5%;
+    color: white;
+    text-align: center;
+    background-color: var(--main-color);
+    min-width: 200px;
+
+}
+
+.navigation ul li a:hover{
+    color: var(--hover-color);
+    background-color: var(--light-black);
+	box-shadow: var(--box-shadow);
+}
+.container{
+	/* background-color: red; */
+}
+
+
+.content{
+	/* margin-top: 3%; */
+	background-color: var(--light-white);
+	padding: 3% 0;
+}
+
+.content h1{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* Design admin pannel */
+.dashboard-col{
+	display: flex;
+}
+.col-4{
+	background-color: white;
+	width: 18%;
+	padding: 3% 1%;
+	margin: 2% 2%;
+}
+
+
+
+.tbl-ful{
+	width: 100%;
+}
+
+table{
+	margin-top: 3%;
+}
+
+table tr th{
+	border-bottom: 1px solid black;
+	text-align: left;
+	padding: 1%;
+	
+}
+
+table tr td{
+	padding: 1%;
+}
+
+.footer{
+	font-size: 1rem ;
+	margin: 2% 0;
+	padding: 1% 0;
+	color: white;
+	background-color: var(--main-color);
+}

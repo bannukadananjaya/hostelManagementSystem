@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto','popins',sans-serif;
+    font-size: 1rem;
+}
+:root{
+    --main-font:thin 100;
+	--main-size:15px;
+	--main-color:#a4b0be;
+	--hover-color:#f1f2f6;
+	--white:#fff;
+	--black:#222;
+	--light-white:#dfe4ea;
+	--light-black:rgb(97, 95, 95);
+	--border:.1rem solid var(--black);
+	--box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+	--text-shadow:0 1.5rem 3rem rgba(0,0,0,.1);
+}
+.btn{
+    font-size: 1rem;
+    padding: 0.6% 0.5%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: var(--main-color);
+    background-color: var(--light-white);
+}
+.btn:hover{
+    color: var(--hover-color);
+    background-color: var(--light-black);
+}
+.align-center{
+    text-align: center;
+}
+
+.img-responsive{
+    width: 100%;
+}
+.heading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1%;
+}
+.wrapper{
+    /* background-color: bisque; */
+    display: grid;
+    /* height: 100vh; */
+    grid-template-areas: 
+    "header header header header"
+    "nav nav nav nav"
+    "content1 content1 content1 content1"
+    "content2 content2 content2 content2"
+    "footer footer footer footer" ;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    /* grid-template-rows: auto auto 1.5fr 3.2fr 0.5fr; */
+    /* border: 1px solid red; */
+}
+.container{
+    width: 85%;
+    margin: 1% auto;
+}
+header{
+    grid-area: header;
+    background-image: linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.9)), url(img/header_img.png);
+    background-size:cover;
+    background-position: bottom;
+    background-repeat: none;
+    /* height: 2%; */
+    position: relative;
+    min-height: 170px;
+    /* border: 1px solid red; */
+}
+.topbar-1{
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    /* border: 1px solid red; */
+}
+.topbar-logo{
+    flex: 1;
+    transform: translate(-0px,0);
+    /* border: 1px solid red; */
+    /* width: 5%; */
+    
+}
+.topbar-links{
+    flex:8;
+    justify-content: space-around;
+}
+.topbar-links ul{
+    text-align: right;
+    list-style: none;
+    /* align-items: flex-end; */
+    /* border: 1px solid red; */
+        
+}
+.topbar-links ul li{
+    display: inline;
+}
+.topbar-links ul li a{
+    box-shadow: var(--box-shadow);
+    background-color:  rgba(255,255, 255,0.3);
+    padding: 2% 5%;
+    margin: 0 2%;
+    text-decoration: none;
+    color: white;
+    /* color: var(--white); */
+}
+.topbar-links ul li a:hover{
+    background-color:#dfe4ea;
+    color: var(--black);
+}
+.topbar-2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%,0%);
+    /* margin-top: 50px ; */
+    /* border: 1px solid red; */
+}
+.topbar-2 h1{
+    /* line-height: 300px; */
+    color: whitesmoke;
+    font-size: 2.5rem;
+    padding-bottom: 2%;
+    font-weight: bold;
+    /* padding: 2%; */
+}
+.topbar-2 h2{
+    color: whitesmoke;
+    font-size: 1.2rem;
+    padding: 0%;
+}
+
+/* style navigation pannel */
+nav{
+    grid-area: nav;
+    /* background-color: antiquewhite; */
+    align-items: center;
+    /* margin: 1%; */
+    /* border: 1px solid red; */
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    /* padding: 1%; */
+}
+/* nav ul li{
+    /* display: inline; */
+    /* padding: 1%; */
+    /* border: 1px solid red; 
+    
+    background-color: var(--main-color); 
+    
+} 
+*/
+nav ul li a{
+    display: inline-block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8% 5%;
+    color: white;
+    text-align: center;
+    background-color: var(--main-color);
+    min-width: 200px;
+    /* margin: 1%; */
+    /* background-color: aqua; */
+    /* border: 1px solid red; */
+}
+nav ul li a:hover{
+    color: var(--hover-color);
+    background-color: var(--light-black);
+    box-shadow: var(--box-shadow);
+}
+
+
+
+
+.content{
+    grid-area:content1 ;
+    background-color: #dfe4ea;
+    padding-top: 20px;
+}
+/* categories */
+.category-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 0px 5%;
+    /* gap: 10px; */
+    /* position: absolute; */
+    
+}
+.category-box-3{
+    /* background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.7)),url(../img/categories/fiction.jpg); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 3%;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.category-info{
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-80%,0%); */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    width: 400px;  */
+} 
+/* slider design start here */
+
+.title{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 5%;
+}
+.info{
+    text-align: center;
+    width: 60%;
+}
+
+
+/* books */
+
+.book-menu-box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0px 5%;
+    
+    /* gap: 10px; */
+    
+}
+.box-2{
+    display: flex;
+    background-color: #f1f2f6;
+    padding: 1%;
+    border-radius: 5px;
+    margin: 3%;
+    /* border: 1px solid red; */
+}
+.book-img{
+    width: 30%;
+}
+
+
+
+footer{
+    grid-area: footer;
+    /* display: flex; */
+    background-color: #ced6e0;
+}
+.footer-box-1{
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+}
+.box-4{
+    width: 25%;
+    /* border: 1px solid red; */
+    margin:0 1%;
+    padding: 1% 2%;
+    background-color: #f1f2f6;
+    border-radius: 5px;
+    
+}
+.box-4 h3{
+    margin-bottom: 3%;
+    font-size: 1rem;
+}
+
+.box-4 ul a{
+    display: flex;
+    text-decoration: none ;
+}
+.footer-box-2{
+    margin: 1% ;
+}
+.footer-box-2 p{
+    color:#a4b0be;
+}

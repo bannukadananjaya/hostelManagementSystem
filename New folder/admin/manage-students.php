@@ -1,5 +1,5 @@
 <?php
-    include_once('partials/header.php');
+include_once('SITEURL.partials/footer.php');
 ?>
 
 <section class="content">

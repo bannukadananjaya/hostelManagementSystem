@@ -51,8 +51,7 @@ include_once'partials/header.php';
         <table class="tbl-ful">
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                
                 <th>User Name</th>
                 <th>Gender</th>
                 <th>Email</th>

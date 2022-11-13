@@ -1,46 +1,6 @@
-<?php include('../config/constants.php');
-      include('login-check.php');    
-
+<?php
+include_once('partials/header.php');
 ?>
-
-<html>
-    <head>
-        <title>
-            Add Student
-        </title>
-        <link rel="stylesheet" href="../css/style-form2.css">
-        <link rel="stylesheet" href="../css/admin.css">
-    </head>
-    <body>
-        <div class="wrapper">
-        <header>
-                <div class="container">    
-                    <div class="topbar">
-                        <div class="topbar-logo">
-                            <a href="index.php"><img src="../img/logo.png" alt="logo" class="img-responsive"></a>
-                        </div>
-                        <div class="topbar-title ">
-                            <h1 class="align-center">Hostel Management System</h1>
-                            <!-- <h2 class="align-center">Books are a uniquely portable magic.</h2> -->
-                        </div>
-                        <div class="logout">
-                            <a href="logout.php"><img src="../img/icons/logout.png" alt="logout" class="img-responsive"></a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <section class="navigation" >
-                <div class="container" >
-                    <ul class="align-center">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="manage-services.php">Admin</a></li>
-                        <li><a href="manage-students.php">Students</a></li>
-                        <li><a href="manage-hostels.php">Hostels</a></li>
-                        <li><a href="manage-roooms.php">Rooms</a></li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
 
 <section class="content">
     <div class="container">
@@ -78,8 +38,8 @@
                 
                 <label for="city">City</label>
                 <input type="text" placeholder="City" name="city" required></br>
-                <label for="street">Street</label>
-                <input type="text" placeholder="Street" name="street" required></br>
+                <label for="street">District</label>
+                <input type="text" placeholder="District" name="district" required></br>
                 <label for="postalCode">Postal Code :</label>
                 <input type="text" placeholder="Postal Code" name="postalCode" required></br>
                 <label for="phoneNo">Contact No</label>
@@ -93,16 +53,9 @@
     </div>
 </section> 
 
-<section class="footer">
-                <div class="container align-center">
-                    <p>All right reserved, Food House. Developed by <a href="#">Banuka Dananjaya</a></p>
-                </div>
-            </section>
-
-        </div>
-    </body>
-</html>
-
+<?php
+include_once'partials/footer.php';
+?>
 
 <?php
 //process the value from and save it in Database
@@ -119,7 +72,7 @@ if(isset($_POST['submit'])){
     $gender=$_POST['gender'];
     $email=$_POST['email'];
     $city=$_POST['city'];
-    $street=$_POST['street'];
+    $district=$_POST['district'];
     $postalCode=$_POST['postalCode'];
     $phoneNo=$_POST['phoneNo'];
     $password=$_POST['password'];
@@ -132,22 +85,17 @@ if(isset($_POST['submit'])){
         //set the default value
         $gender="M";
     }
-
-   
-
-   
-
     
     //2.SQL Query to save data into database
 
-    $sql ="INSERT INTO students SET
+    $sql ="INSERT INTO student SET
         firstName='$firstName',
         lastname='$lastName',
         dob='$dob',
         gender='$gender',
         email='$email',
         city='$city',
-        street='$street',
+        district='$district',
         postalCode='$postalCode',
         phoneNo='$phoneNo',
         pasword='$password'

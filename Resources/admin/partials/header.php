@@ -42,7 +42,7 @@
                                 <li><a href="manage-services.php">Services</a></li>
                                 <li><a href="manage-students.php">Students</a></li>
                                 <li><a href="manage-hostels.php">Hostels</a></li>
-                                <li><a href="manage-roooms.php">Rooms</a></li>
+                                <li><a href="manage-rooms.php">Rooms</a></li>
                             </ul>
                         </div>
                     </section>

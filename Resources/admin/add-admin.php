@@ -1,46 +1,6 @@
-<?php include('../config/constants.php');
-       include('login-check.php');    
-
+<?php
+include_once'partials/header.php';
 ?>
-
-<html>
-    <head>
-        <title>
-            Add Admin
-        </title>
-        <link rel="stylesheet" href="../css/style-form2.css">
-        <link rel="stylesheet" href="../css/admin.css">
-    </head>
-    <body>
-        <div class="wrapper">
-        <header>
-                <div class="container">    
-                    <div class="topbar">
-                        <div class="topbar-logo">
-                            <a href="index.php"><img src="../img/logo.png" alt="logo" class="img-responsive"></a>
-                        </div>
-                        <div class="topbar-title ">
-                            <h1 class="align-center">Hostel Management System</h1>
-                            <!-- <h2 class="align-center">Books are a uniquely portable magic.</h2> -->
-                        </div>
-                        <div class="logout">
-                            <a href="logout.php"><img src="../img/icons/logout.png" alt="logout" class="img-responsive"></a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <section class="navigation" >
-                <div class="container" >
-                    <ul class="align-center">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="manage-services.php">Admin</a></li>
-                        <li><a href="manage-students.php">Students</a></li>
-                        <li><a href="manage-hostels.php">Hostels</a></li>
-                        <li><a href="manage-roooms.php">Rooms</a></li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
 
 <section class="content">
     <div class="container">
@@ -79,16 +39,9 @@
     </div>
 </section> 
 
-<section class="footer">
-                <div class="container align-center">
-                    <p>All right reserved, Food House. Developed by <a href="#">Banuka Dananjaya</a></p>
-                </div>
-            </section>
-
-        </div>
-    </body>
-</html>
-
+<?php
+include_once'partials/footer.php';
+?>
 
 <?php
 //process the value from and save it in Database
@@ -122,7 +75,7 @@ if(isset($_POST['submit'])){
 
     $sql ="INSERT INTO admin SET
         firstName='$firstName',
-        lastname='$lastName',
+        lastName='$lastName',
         userName='$userName',
         gender='$gender',
         email='$email',

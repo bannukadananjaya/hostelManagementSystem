@@ -15,9 +15,9 @@
             <header>
                 <div class="container">    
                     <div class="topbar">
-                        <div class="topbar-logo">
+                        <!-- <div class="topbar-logo">
                             <a href="index.php"><img src="../img/logo.png" alt="logo" class="img-responsive"></a>
-                        </div>
+                        </div> -->
                         <div class="topbar-title ">
                             <h1 class="align-center">Hostel Management System</h1>
                             <!-- <h2 class="align-center">Books are a uniquely portable magic.</h2> -->
@@ -33,7 +33,6 @@
                 if('location:'=='location:'.SITEURL.'Resources/admin/update-admin.php'){
 
                 }else{
-
                     ?>
                     <section class="navigation" >
                         <div class="container" >
@@ -41,7 +40,7 @@
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="manage-admin.php">Admin</a></li>
                                 <li><a href="manage-services.php">Services</a></li>
-                                <li><a href="manage-student.php">Students</a></li>
+                                <li><a href="manage-students.php">Students</a></li>
                                 <li><a href="manage-hostels.php">Hostels</a></li>
                                 <li><a href="manage-roooms.php">Rooms</a></li>
                             </ul>

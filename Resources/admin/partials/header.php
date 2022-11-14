@@ -41,6 +41,7 @@
                                 <li><a href="manage-admin.php">Admin</a></li>
                                 <li><a href="manage-services.php">Services</a></li>
                                 <li><a href="manage-students.php">Students</a></li>
+                                <li><a href="manage-employees.php">Employees</a></li>
                                 <li><a href="manage-hostels.php">Hostels</a></li>
                                 <li><a href="manage-rooms.php">Rooms</a></li>
                             </ul>

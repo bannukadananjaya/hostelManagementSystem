@@ -7,7 +7,7 @@ include_once'partials/header.php';
     $id=$_GET['id'];
 
     //2.Create sql query to get the details
-    $sql="SELECT * FROM student WHERE studentId=$id";
+    $sql="SELECT * FROM employee WHERE empId=$id";
 
     //Execute the Query
     $res=mysqli_query($conn, $sql);
@@ -23,19 +23,20 @@ include_once'partials/header.php';
 
             $firstName=$row['firstName'];
             $lastName=$row['lastName'];
+           
+            $designation=$row['designation'];
             $dob=$row['dob'];
             $gender=$row['gender'];
             $email=$row['email'];
-            $city=$row['city'];
-            $district=$row['district'];
-            $postalCode=$row['postalCode'];
+            $address=$row['address'];
+            
             $phoneNo=$row['phoneNo'];
 
             
         }
         else{
             //Redirect to Manage Admn page
-            header('location:'.SITEURL.'Resources/admin/manage-admin.php');
+            header('location:'.SITEURL.'Resources/admin/manage-employees.php');
         }
     }
 ?>
@@ -52,6 +53,8 @@ include_once'partials/header.php';
             <input type="text" name="firstName" value="<?php echo $firstName?>"><br>
             <label for="lastName">Last Name :</label>
             <input type="text" name="lastName" value="<?php echo $lastName?>"><br>
+            <label for="designation">Designation :</label>
+            <input type="text" name="designtion" placeholder="Designation"><br>
             <label for="dob">Date of Birth :</label>
             <input type="date" name="bod" value="<?php echo $dob?> " required><br>
             <label for="gender">Gender</label>
@@ -60,16 +63,13 @@ include_once'partials/header.php';
             <label for="email">Email</label>
             <input type="email" placeholder="Email" name="email" value="<?php echo $email;?>" required></br>
             <label for="city">City</label>
-            <input type="text" placeholder="City" name="city" value="<?php echo $city;?>" required></br>
-            <label for="district">District</label>
-            <input type="text" placeholder="District" name="district" value="<?php echo $district;?>" required></br>
-            <label for="postalCode">Postal Code</label>
-            <input type="text" placeholder="Postal Code" name="postalCode" value="<?php echo $postalCode;?>" required></br>
+            <label for="address">Address</label>
+            <input type="text" placeholder="Address" name="address" required></br>
             <label for="phoneNo">Contact No</label>
             <input type="text" placeholder="Contact No" name="phoneNo" value="<?php echo $phoneNo;?>" required></br>
 
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <input type="submit" name="submit" value="Update Student" class="btn">
+            <input type="submit" name="submit" value="Update Employee" class="btn">
             
         </form>
 
@@ -91,9 +91,8 @@ include_once('partials/footer.php');
         $dob=$_POST['dob'];
         $gender=$_POST['gender'];
         $email=$_POST['email'];
-        $city=$_POST['city'];
-        $district=$_POST['district'];
-        $postalCode=$_POST['postalCode'];
+        $address=$_POST['address'];
+        
         $phoneNo=$_POST['phoneNo'];
        
 
@@ -106,17 +105,16 @@ include_once('partials/footer.php');
         }
     
         //2.Check whether user exist with that password
-        $sql="UPDATE admin SET 
+        $sql="UPDATE employee SET 
         firstName='$firstName',
         lastname='$lastName',
+        designation='$designation',
         dob='$dob',
         gender='$gender',
         email='$email',
-        city='$city',
-        district='$district',
-        postalCode='$postalCode',
+        address='$address',
         phoneNo='$phoneNo'
-        WHERE studentId=$id";
+        WHERE empId=$id";
 
         //execute the query
         $res=mysqli_query($conn,$sql);
@@ -125,12 +123,12 @@ include_once('partials/footer.php');
             
             //query executed and admin updated
             $_SESSION['update']="<div class='success'>Update the details Successfully</div>";
-            header('location:'.SITEURL.'Resources/admin/manage-admin.php');
+            header('location:'.SITEURL.'Resources/admin/manage-employees.php');
 
         }
         else{
             $_SESSION['update-failed']="<div class='error'>Update Failed</div>";
-            header('location:'.SITEURL.'Resources/admin/manage-admin.php');
+            header('location:'.SITEURL.'Resources/admin/manage-employees.php');
         }
             
     }

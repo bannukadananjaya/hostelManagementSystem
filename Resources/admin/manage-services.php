@@ -125,7 +125,7 @@ include_once'partials/header.php';
                     //display msg inside table
                     ?>
                     <tr>
-                        <td colspan="8"><div class="error">No Students Added</div></td>
+                        <td colspan="8"><div class="error">No Services Added</div></td>
                     </tr>
 
                     <?php

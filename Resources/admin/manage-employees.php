@@ -97,7 +97,7 @@ include_once('partials/header.php');
                         ?>
                         
                         <tr>
-                        <td><?php echo $id ?></td>
+                        <td><?php echo $id; ?></td>
                         <td><?php echo $first_name.' '.$last_name; ?></td>
                         <td><?php echo $designation;?></td>
                         <td><?php echo $dob; ?></td>
@@ -123,7 +123,7 @@ include_once('partials/header.php');
                     //display msg inside table
                     ?>
                     <tr>
-                        <td colspan="8"><div class="error">No Students Added</div></td>
+                        <td colspan="8"><div class="error">No Employees Added</div></td>
                     </tr>
 
                     <?php

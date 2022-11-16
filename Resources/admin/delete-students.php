@@ -17,14 +17,14 @@
         //Querrry executed successfully and admin deleted
         $_SESSION['delete']= "<dev class='success'>Student Deleted Successfully</dev>";
         //Redirect page
-        header("location:".SITEURL.'Resources/admin/manage-student.php');
+        header("location:".SITEURL.'Resources/admin/manage-students.php');
         exit();
     }
     else{
         //Querry exected unsuccesfully
         $_SESSION['delete']="<dev class='error'>Student Deletion Not Complete</dev>";
         //Redirect page
-        header("location:".SITEURL.'Resources/admin/manage-student.php');
+        header("location:".SITEURL.'Resources/admin/manage-students.php');
         exit();
     }
 //3.Redirect to Manage Admin page with message (success/error)

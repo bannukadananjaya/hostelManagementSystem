@@ -108,8 +108,8 @@ include_once('partials/header.php');
                         <td><?php echo $phoneNo; ?></td>
                         
                         <td>
-                            <a href="<?php echo SITEURL; ?>Resources/admin/update-employees.php?id=<?php echo $id; ?>" class="btn-secondary">Edit Student</a>  
-                            <a href="<?php echo SITEURL; ?>Resources/admin/delete-employees.php?id=<?php echo $id; ?>" class="btn-quantiary">Delete Student</a> 
+                            <a href="<?php echo SITEURL; ?>Resources/admin/update-employees.php?id=<?php echo $id; ?>" class="btn-secondary">Edit Employee</a>  
+                            <a href="<?php echo SITEURL; ?>Resources/admin/delete-employees.php?id=<?php echo $id; ?>" class="btn-quantiary">Delete Employee</a> 
                         </td>
                         </tr>
 

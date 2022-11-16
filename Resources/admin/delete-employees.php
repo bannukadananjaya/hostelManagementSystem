@@ -15,15 +15,18 @@
     if($res==true)
     {
         //Querrry executed successfully and admin deleted
-        $_SESSION['delete']= "<dev class='success'>Admin Deleted Successfully</dev>";
+        $_SESSION['delete']= "<dev class='success'>Employee Deleted Successfully</dev>";
         //Redirect page
-        header("location:".SITEURL.'Resources/admin/manage-employee.php');
+        header("location:".SITEURL.'Resources/admin/manage-employees.php');
+        exit();
     }
     else{
         //Querry exected unsuccesfully
-        $_SESSION['delete']="<dev class='error'>Admin Deletion Not Complete</dev>";
+        $_SESSION['delete']="<dev class='error'>Employee Deletion Not Complete</dev>";
         //Redirect page
-        header("location:".SITEURL.'Resources/admin/manage-employee.php');
+        header("location:".SITEURL.'Resources/admin/manage-employees.php');
+        exit();
+
     }
 //3.Redirect to Manage Admin page with message (success/error)
 

@@ -16,15 +16,17 @@
     if($res==true)
     {
         //Querrry executed successfully and admin deleted
-        $_SESSION['delete']= "<dev class='success'>Member Deleted Successfully</dev>";
+        $_SESSION['delete']= "<dev class='success'>Service Deleted Successfully</dev>";
         //Redirect page
         header("location:".SITEURL.'Resources/admin/manage-services.php');
+        exit();
     }
     else{
         //Querry exected unsuccesfully
-        $_SESSION['delete']="<dev class='error'>Category Deletion Not Successful</dev>";
+        $_SESSION['delete']="<dev class='error'>Service Deletion Not Successful</dev>";
         //Redirect page
         header("location:".SITEURL.'Resources/admin/manage-services.php');
+        exit();
     }
 //3.Redirect to Manage Admin page with message (success/error)
 

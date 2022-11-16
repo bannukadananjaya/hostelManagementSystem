@@ -76,12 +76,14 @@ if(isset($_POST['submit'])){
         $_SESSION['user']=$user_name;//to check user is login or not
         //redirect to dashboard page
         header('location:'.SITEURL.'Resources/admin/');
+        exit();
     }
     else{
         //user not available and login fail
         $_SESSION['login-fail']="<div class='error'>Login Failed</div>";
         //redirect to dlogin page
         header('location:'.SITEURL.'Resources/admin/login.php');
+        exit();
     }
 }
 

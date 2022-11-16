@@ -80,9 +80,9 @@ include_once'partials/header.php';
                         //use while loop yo display all the admin
                         //get individual data
                         $id = $rows['hostelId'];
-                        $name=$rows['name'];
+                        $hostelName=$rows['hostelName'];
                         
-                        $Type=$rows['type'];
+                        $type=$rows['type'];
                        
                         $location=$rows['location'];                        
                         //Display data
@@ -90,7 +90,7 @@ include_once'partials/header.php';
                         
                         <tr>
                         <td><?php echo $id ?></td>
-                        <td><?php echo $name; ?></td>
+                        <td><?php echo $hostelName; ?></td>
                        
                         <td><?php echo $type; ?></td>
                         

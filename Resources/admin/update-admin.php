@@ -1,5 +1,5 @@
 <?php
-include_once'partials/header.php';
+include_once('partials/header.php');
 ?>
 
 <?php
@@ -32,6 +32,7 @@ include_once'partials/header.php';
         else{
             //Redirect to Manage Admn page
             header('location:'.SITEURL.'Resources/admin/manage-admin.php');
+            exit();
         }
     }
 ?>
@@ -67,7 +68,7 @@ include_once'partials/header.php';
 </section>
 
 <?php
-include_once'partials/footer.php';
+include_once('partials/footer.php');
 ?>
 
 <?php
@@ -110,11 +111,13 @@ include_once'partials/footer.php';
             //query executed and admin updated
             $_SESSION['update']="<div class='success'>Update the details Successfully</div>";
             header('location:'.SITEURL.'Resources/admin/manage-admin.php');
+            exit();
 
         }
         else{
             $_SESSION['update-failed']="<div class='error'>Update Failed</div>";
             header('location:'.SITEURL.'Resources/admin/manage-admin.php');
+            exit();
         }
             
     }

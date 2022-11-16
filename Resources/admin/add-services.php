@@ -6,8 +6,8 @@ include_once('partials/header.php');
     <div class="container">
         
         <div class="form-box">
-            <form action="includes/add-rooms.inc.php" method="POST" enctype="multipart/form-data">
-                <h1 class="heading">Add Room</h1>
+            <form action="includes/add-service.inc.php" method="POST" enctype="multipart/form-data">
+                <h1 class="heading">Add Service</h1>
                 <br>
                 <?php 
                     if(isset($_SESSION['add']))//checking whether the session is set or not
@@ -24,17 +24,17 @@ include_once('partials/header.php');
                 <br>
                 <hr/>
                 <br>
-
-                
-                <label for="">Room Status :</label>
-                <input type="radio" name="status" value="Free">Free&nbsp;
-                <input type="radio" name="status" value="Occupied">Occupied</br>
-                
-                <label for="occupancy">Occupancy :</label>
-                <input type="text" name="occupancy" placeholder="No of Students can Occupied"><br>
+                <label for="serviceName">Service Name :</label>
+                <input type="text" name="serviceName" placeholder="service Name"><br>
+                <label for="image">Select Image :</label>
+                <input type="file" name="image"><br/><br/>
+                <label for="active">Active :</label>
+                <input type="radio" name="active" value="Yes">Yes
+                <input type="radio" name="active" value="No">No<br>
                 <label for="description">Description :</label>
                 <input type="text" name="description" placeholder="Description"><br>
-                <input type="submit" value="Add Room" name="submit" class="btn">
+                
+                <input type="submit" value="Add Service" name="submit" class="btn">
             </form>
         </div>
     </div>
@@ -43,3 +43,4 @@ include_once('partials/header.php');
 <?php
 include_once('partials/footer.php');
 ?>
+

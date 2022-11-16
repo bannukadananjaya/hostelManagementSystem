@@ -73,8 +73,7 @@
             <h1 class="heading align-center"> Services</h1>
             <div class="service-box">
                 <?php
-                    $sql="  SELECT * 
-                            FROM services";
+                    $sql="  SELECT * FROM service";
 
                     $res=mysqli_query($conn,$sql);
                     $count=mysqli_num_rows($res);
@@ -83,15 +82,16 @@
                     {
                         while($row=mysqli_fetch_assoc($res))
                         {
-                            $id=$row['categoryId'];
-                            $title=$row['title'];
-                            $image_name=$row['imgName'];
+                            $id=$row['serviceId'];
+                            $serviceName=$row['serviceName'];
+                            $imageName=$row['imgName'];
+                            $description=$row['description'];
 
                             ?>
                                 <a href="">
                                     <div class="category-box-3">
                                         <?php
-                                        if($image_name=="")
+                                        if($imageName=="")
                                         {
                                             //image not available
                                             echo "<div class='error'> Image not available</div>";
@@ -99,13 +99,13 @@
                                         else{
                                             //image availble
                                             ?>
-                                            <img src="<?php echo SITEURL;?>Resources/img/categories/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive">
+                                            <img src="<?php echo SITEURL;?>Resources/img/services/<?php echo $imageName; ?>" alt="Service" class="img-responsive">
                                             <?php
                                         }
                                         ?>
                                         <div class="category-info">
-                                            <div class="title">Studies</div>
-                                            <div class="info"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, nisi.</p></div>
+                                            <div class="title"><?php echo $serviceName;?></div>
+                                            <div class="info"><p><?php echo $description;?></p></div>
                                         </div> 
                                     </div>
                                 </a>

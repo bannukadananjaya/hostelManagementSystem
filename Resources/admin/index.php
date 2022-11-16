@@ -1,5 +1,5 @@
 <?php
-include_once'partials/header.php';
+include_once('partials/header.php');
 ?>
 
 
@@ -27,6 +27,18 @@ include_once'partials/header.php';
                     ?>
                     <br/>
                     Students</h3>
+                </div>
+
+                <div class="col-4">
+                    <h3 class="align-center">
+                    <?php 
+                    $sql1="SELECT empId FROM employee";
+                    $res=mysqli_query($conn,$sql1);
+                    $count=mysqli_num_rows($res);
+                    echo $count;
+                    ?>
+                    <br/>
+                    Employees</h3>
                 </div>
 
                 <div class="col-4">
@@ -68,5 +80,5 @@ include_once'partials/header.php';
 </section>
 
 <?php
-include_once'partials/footer.php';
+include_once('partials/footer.php');
 ?>

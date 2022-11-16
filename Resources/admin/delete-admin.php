@@ -18,12 +18,14 @@
         $_SESSION['delete']= "<dev class='success'>Admin Deleted Successfully</dev>";
         //Redirect page
         header("location:".SITEURL.'Resources/admin/manage-admin.php');
+        exit();
     }
     else{
         //Querry exected unsuccesfully
         $_SESSION['delete']="<dev class='error'>Admin Deletion Not Complete</dev>";
         //Redirect page
         header("location:".SITEURL.'Resources/admin/manage-admin.php');
+        exit();
     }
 //3.Redirect to Manage Admin page with message (success/error)
 

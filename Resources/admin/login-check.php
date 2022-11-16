@@ -7,5 +7,6 @@
         $_SESSION['login-error']="<div class='error'>Please log into access Admin Panel</div>";
         //redirect to login page
         header('location:'.SITEURL.'Resources/admin/login.php');
+        exit();
     }
 ?>

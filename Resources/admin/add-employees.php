@@ -6,7 +6,7 @@ include_once('partials/header.php');
     <div class="container">
         
         <div class="form-box">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="includes/add-employees.inc.php" method="POST" enctype="multipart/form-data">
                 <h1 class="heading">Add Student</h1>
                 <br>
                 <?php 
@@ -56,68 +56,3 @@ include_once('partials/header.php');
 include_once'partials/footer.php';
 ?>
 
-<?php
-//process the value from and save it in Database
-//check weather the submit button is clicked or not
-
-if(isset($_POST['submit'])){
-    //Button Clicked
-    //echo "Button Clicked"
-    //Get teh data from the form
-
-    $firstName=$_POST['firstName'];
-    $lastName=$_POST['lastName'];
-    $designation=$_POST['designation'];
-    $dob=$_POST['dob'];
-    $gender=$_POST['gender'];
-    $email=$_POST['email'];
-    $address=$_POST['address'];
-
-    $phoneNo=$_POST['phoneNo'];
-    $password=$_POST['password'];
-    //for radio btn checked or not
-
-    if(isset($_POST['gender'])){
-        $gender=$_POST['gender'];
-    }
-    else{
-        //set the default value
-        $gender="M";
-    }
-    
-    //2.SQL Query to save data into database
-
-    $sql ="INSERT INTO employee SET
-        firstName='$firstName',
-        lastname='$lastName',
-        designation='$designation',
-        dob='$dob',
-        gender='$gender',
-        email='$email',
-        address='$address',
-        
-        phoneNo='$phoneNo',
-        pasword='$password'
-        ";
-
-    //3.Execute Query and Save Date in Database
-
-    $res = mysqli_query($conn,$sql) or die(mysqli_error());
-
-    if($res==true){
-        // Data Inserted
-        $_SESSION['add']= "<div class='success'>Student Added Successfully</div>";
-        //Redirect page
-        header("location:".SITEURL.'Resources/admin/manage-employee.php');
-    }
-    else
-    {
-       //Faile to Insert Data
-       $_SESSION['add']= "<div class='error'>Failed to Add Student</div>";
-       //Redirect page
-       header("location:".SITEURL.'Resources/admin/manage-employee.php');
-    }
-
-}
-
-?>

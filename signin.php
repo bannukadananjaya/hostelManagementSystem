@@ -1,4 +1,4 @@
-<?php include('Resources/config/constants.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +51,7 @@
 
         <section class="content">
             <div class="form-box">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="includes/signin.inc.php" method="POST" enctype="multipart/form-data">
                     <h1 class="heading align-center">Sign In</h1>
                     <p class="frmtitle">Please fill this form to login</p>
                     <hr/>
@@ -100,45 +100,3 @@
     <!-- wrapper class end here -->
 </body>
 </html>
-
-<?php
-if(isset($_POST['submit'])){
-    echo "login Successful";
-//process for login
-//1.Get data from LoginForm
-
-$user_name=$_POST['firstName'];
-$password=$_POST['pasword'];
-
-
-//2.Check whether user name and password exist pr not
-$sql="SELECT * FROM students WHERE firstName='$user_name' AND pasword='$password'";
-
-//3.execute the sql query
-$res= mysqli_query($conn,$sql);
-//$row=mysqli_fetch_assoc($res);
-//4.count rows to check user exist
-$count=mysqli_num_rows($res);
-
-if($count==1){
-    //user available and login success
-    //$userId=$row['studentId'];
-    echo "login Successful";
-    $_SESSION['login-success']="<div class='success'>Login Successful</div>";
-    $_SESSION['user']=$user_name; //to check user is login or not
-   // $_SESSION['userId']=$userId;
-    //redirect to dashboard page
-    header("location:".SITEURL."index.php");
-    
-}
-    
-else{
-    //user not available and login fail
-    $_SESSION['login-fail']="<div class='error'>Login Failed</div>";
-    //redirect to dlogin page
-    header("loaction:".SITEURL.'index.php');
-    exit();
-}
-}
-
-?>

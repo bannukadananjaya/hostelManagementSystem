@@ -1,5 +1,5 @@
 <?php
-include_once'partials/header.php';
+include_once('partials/header.php');
 ?>
 
 <section class="content">
@@ -47,20 +47,17 @@ include_once'partials/header.php';
         ?>
         
         <br><br/>
-        <a href="<?php echo SITEURL; ?>Resources/admin/add-services.php" class="btn-primary">Add Student</a>
+        <a href="<?php echo SITEURL; ?>Resources/admin/add-services.php" class="btn-primary">Add Service</a>
 
         <table class="tbl-ful">
             <tr>
-                <th>Student ID</th>
-                <th>Full Name</th>
+                <th>Service ID</th>
                
-                <th>DOB</th>
-                <th>Gender</th>
-                <th>Email</th>
-                <th>City</th>
-                <th>District</th>
-                <th>Postal Code</th>
-                <th>Phone No</th>
+                <th>Service Name</th>
+                <th>Image Name</th>
+                <th>Active</th>
+                <th>Description</th>
+                
                 <th>Action</th>
             </tr>
 
@@ -83,35 +80,26 @@ include_once'partials/header.php';
                     {
                         //use while loop yo display all the admin
                         //get individual data
-                        $id = $rows['studentId'];
-                        $first_name=$rows['firstName'];
-                        $last_name=$rows['lastName'];
-                        $dob=$rows['dob'];
-                        $gender=$rows['gender'];
-                        $email=$rows['email'];
-                       
-                        $city=$rows['city'];
-                        $district=$rows['district'];
-                        $postalCode=$rows['postalCode'];
-                        $phoneNo=$rows['phoneNo'];                        
+                        $id = $rows['serviceId'];
+                        $serviceName=$rows['serviceName'];
+                        $imageName=$rows['imgName'];
+                        $active=$rows['active'];
+                        $description=$rows['description'];
+                                              
                         //Display data
                         ?>
                         
                         <tr>
                         <td><?php echo $id ?></td>
-                        <td><?php echo $first_name.' '.$last_name; ?></td>
+                        <td><?php echo $serviceName; ?></td>
                        
-                        <td><?php echo $dob; ?></td>
-                        <td><?php echo $gender; ?></td>
-                        <td><?php echo $email; ?></td>
-                        <td><?php echo $city; ?></td>
-                        <td><?php echo $district; ?></td>
-                        <td><?php echo $postalCode; ?></td>
-                        <td><?php echo $phoneNo; ?></td>
+                        <td><?php echo $imageName; ?></td>
+                        <td><?php echo $active; ?></td>
+                        <td><?php echo $description; ?></td>
                         
                         <td>
-                            <a href="<?php echo SITEURL; ?>Resources/admin/update-services.php?id=<?php echo $id; ?>" class="btn-secondary">Edit Student</a>  
-                            <a href="<?php echo SITEURL; ?>Resources/admin/delete-services.php?id=<?php echo $id; ?>" class="btn-quantiary">Delete Student</a> 
+                            <a href="<?php echo SITEURL; ?>Resources/admin/update-services.php?id=<?php echo $id; ?>" class="btn-secondary">Edit service</a>  
+                            <a href="<?php echo SITEURL; ?>Resources/admin/delete-services.php?id=<?php echo $id; ?>" class="btn-quantiary">Delete service</a> 
                         </td>
                         </tr>
 
@@ -141,5 +129,5 @@ include_once'partials/header.php';
 </section>
 
 <?php
-include_once'partials/footer.php';
+include_once('partials/footer.php');
 ?>

@@ -1,12 +1,12 @@
 <?php
-include_once'partials/header.php';
+include_once('partials/header.php');
 ?>
 
 
 <section class="content">
     <div class="container">
         <h1>Manage Rooms</h1>
-         <!-- Add Admin -->
+        
         
          <br>
          <?php 
@@ -48,23 +48,23 @@ include_once'partials/header.php';
         ?>
         
         <br><br/>
-        <a href="<?php echo SITEURL; ?>Resources/admin/add-hostels.php" class="btn-primary">Add Hostel</a>
+        <a href="<?php echo SITEURL; ?>Resources/admin/add-rooms.php" class="btn-primary">Add Room</a>
 
         <table class="tbl-ful">
             <tr>
                 <th>Room ID</th>
                 <th>Room Status</th>
                
-                <th>Type</th>
+                <th>Occupancy</th>
             
-                <th>Location</th>
+                <th>Description</th>
                 <th>Action</th>
             </tr>
 
 
             <?php
             //Query to get all admins
-            $sql = 'select * from hostel';
+            $sql = 'select * from room';
             //Execute the Query
             $res = mysqli_query($conn,$sql);
 
@@ -80,26 +80,35 @@ include_once'partials/header.php';
                     {
                         //use while loop yo display all the admin
                         //get individual data
-                        $id = $rows['hostelId'];
-                        $name=$rows['name'];
+                        $id = $rows['roomId'];
+                        $roomStatus=$rows['roomStatus'];
                         
-                        $Type=$rows['type'];
+                        $occupancy=$rows['occupancy'];
                        
-                        $location=$rows['location'];                        
+                        $description=$rows['description'];                        
                         //Display data
                         ?>
                         
                         <tr>
                         <td><?php echo $id ?></td>
-                        <td><?php echo $name; ?></td>
+                        <td>
+                        <?php 
+                        if($roomStatus=='Free'){
+                            echo "<div class='success'>Free</div>"; 
+                        }else{
+                            echo "<div class='error'>Occupied</div>";     
+                        }
+                        ?>
+                        </td>
+                        <td><?php echo $occupancy; ?></td>
                        
-                        <td><?php echo $type; ?></td>
                         
-                        <td><?php echo $location; ?></td>
+                        
+                        <td><?php echo $description; ?></td>
                         
                         <td>
-                            <a href="<?php echo SITEURL; ?>Resources/admin/update-hostels.php?id=<?php echo $id; ?>" class="btn-secondary">Edit Hostel</a>  
-                            <a href="<?php echo SITEURL; ?>Resources/admin/delete-hostels.php?id=<?php echo $id; ?>" class="btn-quantiary">Delete Hostel</a> 
+                            <a href="<?php echo SITEURL; ?>Resources/admin/update-rooms.php?id=<?php echo $id; ?>" class="btn-secondary">Edit Room</a>  
+                            <a href="<?php echo SITEURL; ?>Resources/admin/delete-rooms.php?id=<?php echo $id; ?>" class="btn-quantiary">Delete Room</a> 
                         </td>
                         </tr>
 
@@ -113,7 +122,7 @@ include_once'partials/header.php';
                     //display msg inside table
                     ?>
                     <tr>
-                        <td colspan="8"><div class="error">No Hostels Added</div></td>
+                        <td colspan="8"><div class="error">No Rooms Added</div></td>
                     </tr>
 
                     <?php
@@ -130,5 +139,5 @@ include_once'partials/header.php';
 
 
 <?php
-include_once'partials/footer.php';
+include_once('partials/footer.php');
 ?>

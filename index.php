@@ -128,17 +128,66 @@
         <!-- noticeboard session end here -->
         
         <!-- Services session start here -->
-        <div class="services">
-            <div class="container">
-                <h1 class="heading align-center">Services</h1>
-                   
-                    
-                    
-               
-            </div>
-        </div>
+        
         <!-- Services session end here -->
       
+        <div class="categories">
+            <!-- <div class="container"> -->
+                <h1 class="heading align-center">SERVICES</h1>
+                
+                <div class="category-box" >
+                   <?php
+                   //get the table from database
+                   //SQL querry
+                   $sql="SELECT * FROM service WHERE active='Yes' LIMIT 3";
+                  //Execute the querry
+                   $res=mysqli_query($conn,$sql);
+                   //count rows from the table
+                   $count=mysqli_num_rows($res);
+                   //check rows are available
+                   if($count>0){
+                    //rows available
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+                            $id=$row['serviceId'];
+                            $serviceName=$row['serviceName'];
+                            $imageName=$row['imgName'];
+
+                            ?>
+                            <a href="">
+                                <div class="box-3">
+                                    <?php
+                                    if($imageName=="")
+                                    {
+                                        //image not available
+                                        echo "<div class='error'> Image not available</div>";
+                                    }
+                                    else{
+                                        //image availble
+                                        
+                                        ?>
+                                        <img src="<?php echo SITEURL;?>Resources/img/services/<?php echo $imageName; ?>" alt="Service" class="img-responsive">
+                                        <?php
+                                    }
+                                    ?>
+                                    <div class="box3-title"><?php echo $serviceName;?></div>  
+                                </div>    
+                                       
+                            </a>
+                            <?php
+                        }
+                   }else{
+                    //no rows available
+                    echo "<div class='error'>No services add</div>";
+                   }
+                   ?>
+                    
+                    
+                    
+                </div>   
+            <!-- </div> -->
+        </div>
+
         <!-- footer session start here -->
         <footer>
                 <div class="footer-box-1">

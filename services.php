@@ -71,7 +71,7 @@
         <!-- navigation session end here -->
         <section class="content">
             <h1 class="heading align-center"> Services</h1>
-            <div class="service-box">
+            <div class="category-box">
                 <?php
                     $sql="  SELECT * FROM service";
 

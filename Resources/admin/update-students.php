@@ -68,7 +68,8 @@ include_once'partials/header.php';
             <input type="text" placeholder="Postal Code" name="postalCode" value="<?php echo $postalCode;?>" required></br>
             <label for="phoneNo">Contact No</label>
             <input type="text" placeholder="Contact No" name="phoneNo" value="<?php echo $phoneNo;?>" required></br>
-
+            <label for="roomId">Room No</label>
+            <input type="text" placeholder="Room No" name="roomId" required></br>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <input type="submit" name="submit" value="Update Student" class="btn">
             
@@ -95,6 +96,7 @@ include_once('partials/footer.php');
         $city=$_POST['city'];
         $district=$_POST['district'];
         $postalCode=$_POST['postalCode'];
+        $roomId=$_POST['roomId'];
         $phoneNo=$_POST['phoneNo'];
        
 
@@ -117,6 +119,7 @@ include_once('partials/footer.php');
         district='$district',
         postalCode='$postalCode',
         phoneNo='$phoneNo'
+        roomId='$roomId'
         WHERE studentId=$id";
 
         //execute the query

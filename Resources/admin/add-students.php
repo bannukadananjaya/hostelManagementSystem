@@ -44,7 +44,8 @@ include_once('partials/header.php');
                 <input type="text" placeholder="Postal Code" name="postalCode" required></br>
                 <label for="phoneNo">Contact No</label>
                 <input type="text" placeholder="phoneNo" name="phoneNo" required></br>
-                
+                <label for="roomId">Room No</label>
+                <input type="text" placeholder="Room No" name="roomId" required></br>
                 <label for="password">Password :</label>
                 <input type="password" name="password" required><br>
                 <input type="submit" value="Add Admin" name="submit" class="btn">

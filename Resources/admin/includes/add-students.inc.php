@@ -18,6 +18,7 @@ if(isset($_POST['submit'])){
     $district=$_POST['district'];
     $postalCode=$_POST['postalCode'];
     $phoneNo=$_POST['phoneNo'];
+    $roomId=$_POST['roomId'];
     $password=$_POST['password'];
     //for radio btn checked or not
 
@@ -41,6 +42,7 @@ if(isset($_POST['submit'])){
         district='$district',
         postalCode='$postalCode',
         phoneNo='$phoneNo',
+        roomId='$roomId',
         pasword='$password'
         ";
 
